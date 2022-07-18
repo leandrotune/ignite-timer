@@ -5,8 +5,8 @@ import * as zod from 'zod'
 import { HandPalm, Play } from 'phosphor-react'
 import { differenceInSeconds } from 'date-fns'
 
-import { NewCycleForm } from './NewCycleForm'
-import { Countdown } from './Countdown'
+import { NewCycleForm } from './components/NewCycleForm'
+import { Countdown } from './components/Countdown'
 
 import {
   HomeContainer,
