@@ -1,3 +1,4 @@
+import { createContext } from 'react'
 import { Play } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -22,6 +23,17 @@ const newCycleFormValidationSchema = zod.object({
 })
 
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
+
+interface Cycle {
+  id: string
+  task:  string
+}
+
+interface CyclesContextType {
+  activeCycle: Cycle
+}
+
+const CyclesContext = createContext({})
 
 export function Home() {
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
