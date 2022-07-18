@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react'
+=======
+import { createContext } from 'react'
+import { Play } from 'phosphor-react'
+>>>>>>> main
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
@@ -26,6 +31,7 @@ type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
 interface Cycle {
   id: string
+<<<<<<< HEAD
   task: string
   minutesAmount: number
   startDate: Date
@@ -33,6 +39,17 @@ interface Cycle {
   finishedDate?: Date
 }
 
+=======
+  task:  string
+}
+
+interface CyclesContextType {
+  activeCycle: Cycle
+}
+
+const CyclesContext = createContext({})
+
+>>>>>>> main
 export function Home() {
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
